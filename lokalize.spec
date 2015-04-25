@@ -15,6 +15,15 @@ Url:		http://www.kde.org
 Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 Buildrequires:	ninja
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(KF5Notifications)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(KF5Kross)
+BuildRequires:	cmake(KF5Sonnet)
 BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(hunspell)
 Requires:	kdesdk-strigi-analyzers
@@ -42,9 +51,9 @@ documentation) and message-by-message approach (when translating GUI).
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde5
 ninja -C build
 
 %install
