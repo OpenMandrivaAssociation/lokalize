@@ -13,6 +13,8 @@ Url:		http://www.kde.org
 %define ftpdir stable
 %endif
 Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
+BuildRequires:	cmake(ECM)
+Buildrequires:	ninja
 BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(hunspell)
 Requires:	kdesdk-strigi-analyzers
@@ -42,11 +44,11 @@ documentation) and message-by-message approach (when translating GUI).
 %setup -q
 
 %build
-%cmake_kde4
-%make
+%cmake_kde5
+ninja -C build
 
 %install
-%makeinstall_std -C build
+DESTDIR="%{buildroot}" ninja install -C build
 
 %changelog
 * Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.3-1
