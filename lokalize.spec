@@ -23,10 +23,15 @@ BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5Kross)
 BuildRequires:	cmake(KF5Sonnet)
-BuildRequires:	kdelibs-devel
+BuildRequires:	cmake(KF5DBusAddons)
+BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5DBus)
+BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires:	pkgconfig(Qt5Script)
+BuildRequires:	pkgconfig(Qt5Sql)
 BuildRequires:	pkgconfig(hunspell)
 Requires:	kdesdk-strigi-analyzers
-Requires:	qt4-database-plugin-sqlite
+Requires:	qt5-qtbase-database-plugin-sqlite
 # Needed by some lokalize scripts (mga #10583, bko #181145)
 Requires:	kross-interpreters-python
 Suggests:	python-translate
@@ -39,12 +44,7 @@ implies paragraph-by-paragraph translation approach (when translating
 documentation) and message-by-message approach (when translating GUI).
 
 %files
-%{_kde_bindir}/lokalize
-%{_kde_applicationsdir}/lokalize.desktop
-%{_kde_appsdir}/lokalize
-%{_kde_datadir}/config.kcfg/lokalize.kcfg
-%{_kde_iconsdir}/*/*/apps/lokalize.*
-%{_kde_docdir}/*/*/lokalize
+
 
 #----------------------------------------------------------------------------
 
@@ -57,47 +57,3 @@ documentation) and message-by-message approach (when translating GUI).
 
 %install
 %ninja_install -C build
-
-%changelog
-* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.3-1
-- New version 4.14.3
-
-* Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.2-1
-- New version 4.14.2
-
-* Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.1-1
-- New version 4.14.1
-
-* Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.3-1
-- New version 4.13.3
-
-* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
-- New version 4.13.2
-
-* Wed Apr 02 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.4-1
-- New version 4.12.4
-
-* Tue Mar 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.3-1
-- New version 4.12.3
-
-* Tue Feb 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.2-1
-- New version 4.12.2
-
-* Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.1-1
-- New version 4.12.1
-
-* Wed Dec 04 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.4-1
-- New version 4.11.4
-
-* Wed Nov 06 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.3-1
-- New version 4.11.3
-
-* Wed Oct 02 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.2-1
-- New version 4.11.2
-
-* Tue Sep 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.1-1
-- New version 4.11.1
-
-* Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.0-1
-- Split from kdesdk4 package as upstream did
-- New version 4.11.0
