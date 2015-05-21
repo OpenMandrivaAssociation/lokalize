@@ -46,7 +46,13 @@ implies paragraph-by-paragraph translation approach (when translating
 documentation) and message-by-message approach (when translating GUI).
 
 %files
-
+%doc %{_docdir}/HTML/*/lokalize
+%{_bindir}/lokalize
+%{_datadir}/applications/org.kde.lokalize.desktop
+%{_datadir}/config.kcfg/lokalize.kcfg
+%{_iconsdir}/hicolor/*/apps/*.*[gz]
+%{_datadir}/kxmlgui5/lokalize/*.rc
+%{_datadir}/lokalize
 
 #----------------------------------------------------------------------------
 
