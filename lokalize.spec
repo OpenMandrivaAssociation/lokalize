@@ -1,6 +1,6 @@
 Summary:	Computer-aided translation tool for KDE
 Name:		lokalize
-Version:	15.04.0
+Version:	15.04.1
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -12,9 +12,8 @@ Url:		http://www.kde.org
 %else
 %define ftpdir stable
 %endif
-Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
-Buildrequires:	ninja
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5XmlGui)
@@ -24,7 +23,7 @@ BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5Kross)
 BuildRequires:	cmake(KF5Sonnet)
-BuildRequires:	kdelibs4-devel
+BuildRequires:	kdelibs-devel
 BuildRequires:	pkgconfig(hunspell)
 Requires:	kdesdk-strigi-analyzers
 Requires:	qt4-database-plugin-sqlite
@@ -54,10 +53,10 @@ documentation) and message-by-message approach (when translating GUI).
 %cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja install -C build
+%ninja_install -C build
 
 %changelog
 * Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.3-1
