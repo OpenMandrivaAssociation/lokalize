@@ -54,6 +54,7 @@ documentation) and message-by-message approach (when translating GUI).
 %{_iconsdir}/hicolor/*/apps/*.*[gz]
 %{_datadir}/kxmlgui5/lokalize/*.rc
 %{_datadir}/lokalize
+%{_datadir}/knotifications5/lokalize.notifyrc
 
 #----------------------------------------------------------------------------
 
