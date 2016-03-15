@@ -1,6 +1,6 @@
 Summary:	Computer-aided translation tool for KDE
 Name:		lokalize
-Version:	15.12.2
+Version:	15.12.3
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
