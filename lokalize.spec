@@ -1,6 +1,6 @@
 Summary:	Computer-aided translation tool for KDE
 Name:		lokalize
-Version:	16.04.0
+Version:	16.04.1
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
