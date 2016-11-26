@@ -33,7 +33,6 @@ BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Script)
 BuildRequires:	pkgconfig(Qt5Sql)
 BuildRequires:	pkgconfig(hunspell)
-Requires:	kdesdk-strigi-analyzers
 Requires:	qt5-qtbase-database-plugin-sqlite
 # Needed by some lokalize scripts (mga #10583, bko #181145)
 Requires:	kross-interpreters-python
@@ -50,6 +49,7 @@ documentation) and message-by-message approach (when translating GUI).
 %doc %{_docdir}/HTML/*/lokalize
 %{_bindir}/lokalize
 %{_datadir}/applications/org.kde.lokalize.desktop
+%{_datadir}/metainfo/org.kde.lokalize.appdata.xml
 %{_datadir}/config.kcfg/lokalize.kcfg
 %{_iconsdir}/hicolor/*/apps/*.*[gz]
 %{_datadir}/kxmlgui5/lokalize/*.rc
