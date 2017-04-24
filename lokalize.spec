@@ -1,18 +1,13 @@
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	Computer-aided translation tool for KDE
 Name:		lokalize
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://www.kde.org
-%define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
-%if %{is_beta}
-%define ftpdir unstable
-%else
-%define ftpdir stable
-%endif
-Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5KIO)
@@ -45,8 +40,7 @@ in his/her mother language in laconic and easy to understand form). Lokalize
 implies paragraph-by-paragraph translation approach (when translating
 documentation) and message-by-message approach (when translating GUI).
 
-%files
-%doc %{_docdir}/HTML/*/lokalize
+%files -f %{name}.lang
 %{_bindir}/lokalize
 %{_datadir}/applications/org.kde.lokalize.desktop
 %{_datadir}/metainfo/org.kde.lokalize.appdata.xml
@@ -67,3 +61,4 @@ documentation) and message-by-message approach (when translating GUI).
 
 %install
 %ninja_install -C build
+%find_lang %{name} --with-html
