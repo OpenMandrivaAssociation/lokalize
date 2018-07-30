@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	Computer-aided translation tool for KDE
 Name:		lokalize
-Version:	 18.04.2
+Version:	18.07.80
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -49,6 +49,7 @@ documentation) and message-by-message approach (when translating GUI).
 %{_datadir}/kxmlgui5/lokalize/*.rc
 %{_datadir}/lokalize
 %{_datadir}/knotifications5/lokalize.notifyrc
+%{_sysconfdir}/xdg/lokalize.categories
 
 #----------------------------------------------------------------------------
 
