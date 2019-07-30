@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Script)
+BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Sql)
 BuildRequires:	pkgconfig(hunspell)
 Requires:	qt5-qtbase-database-plugin-sqlite
