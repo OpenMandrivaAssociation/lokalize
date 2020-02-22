@@ -8,6 +8,7 @@ Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://www.kde.org
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+Patch0:		lokalize-19.12.2-QTBUG-82415.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5KIO)
@@ -55,7 +56,7 @@ documentation) and message-by-message approach (when translating GUI).
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 find . -name "*.py" |xargs 2to3 -w
 
