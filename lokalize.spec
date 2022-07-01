@@ -2,7 +2,7 @@
 Summary:	Computer-aided translation tool for KDE
 Name:		lokalize
 Version:	22.04.1
-Release:	1
+Release:	2
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
