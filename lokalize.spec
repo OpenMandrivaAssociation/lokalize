@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	Computer-aided translation tool for KDE
 Name:		lokalize
-Version:	26.04.3
+Version:	26.08.0
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
